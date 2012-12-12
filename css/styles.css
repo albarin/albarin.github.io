@@ -1,0 +1,7 @@
+body {
+  text-align: center;
+}
+
+#webcam-stream {
+  width: 600px;
+}
