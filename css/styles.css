@@ -3,17 +3,18 @@ body {
 }
 
 #webcam-stream {
-  width: 500px;
-  width: 500px;
+  display: none;
 }
 
 canvas {
-  width: 500px;
-  height: 400px;
+  width: auto;
+  height: auto;
+  max-width: 100%;
 }
 
 #color {
-  width: 200px;
-  height: 200px;
+  width: 400px;
+  height: 100px;
   border: 2px solid black;
+  margin: 0px auto;
 }
