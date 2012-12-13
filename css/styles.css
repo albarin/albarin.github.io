@@ -6,3 +6,14 @@ body {
   width: 500px;
   width: 500px;
 }
+
+canvas {
+  width: 500px;
+  height: 400px;
+}
+
+#color {
+  width: 200px;
+  height: 200px;
+  border: 2px solid black;
+}

@@ -11,12 +11,14 @@
 <body>
   
   <video id="webcam-stream" autoplay></video>
-  <canvas id="c"></canvas>
+  <canvas id="canvas-stream"></canvas>
+  <div id="color"></div>
+
   <script>
     document.addEventListener('DOMContentLoaded', function() {
 
       var v = document.getElementById('webcam-stream');
-      var canvas = document.getElementById('c');
+      var canvas = document.getElementById('canvas-stream');
       var context = canvas.getContext('2d');
      
       var cw = Math.floor(canvas.clientWidth);
