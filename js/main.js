@@ -6,7 +6,13 @@ $(document).ready(function() {
     var color_rgb = $('#color').html();
     
     localStorage.setItem(color_key, color_rgb);
-    $('#saved_colors').append('<li>' + color_key + "-->" + color_rgb + '</li>');
+    $('#saved_colors').append('<li class="' + color_key + '">' + color_key + "-->" + color_rgb + ' <span class="remove_color">Delete</span></li>');
+  });
+
+  $('.remove_color').live('click', function() {
+    var color_key = $(this).parent().attr('class');    
+    localStorage.removeItem(color_key);
+    $(this).parent().remove();
   });
 
   print_saved_colors();

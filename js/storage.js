@@ -16,7 +16,7 @@ function print_saved_colors() {
     for (var i=0; i<localStorage.length; i++){
       var key = localStorage.key(i);
       var value = localStorage.getItem(key);
-      $('#saved_colors').append('<li>' + key + "-->" + value + '</li>');
+      $('#saved_colors').append('<li class="' + key + '">' + key + "-->" + value + ' <span class="remove_color">Delete</span></li>');
     } 
   }
 }
