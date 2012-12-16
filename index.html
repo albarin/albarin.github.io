@@ -7,8 +7,10 @@
   <title>CamColors</title>
 
   <script src="js/jquery-1.8.3.min.js"></script>
+  
   <script src="js/jquery.mobile-1.2.0.min.js"></script>
   <script src="js/functions.js"></script>
+  <script src="js/storage.js"></script>
   <script src="js/main.js"></script>
 
   <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.2.0.min.css">
@@ -23,11 +25,20 @@
     </div>
 
     <div data-role="content"> 
+      <ul id="saved_colors">
+        
+      </ul>
+
       <video id="webcam-stream" autoplay></video>
       <canvas width="600" height="450" id="canvas-stream"></canvas>
       <div id="color"></div>
-    </div>
 
+      <form class="storage" data-ajax="false">
+        <input id="color_input" type="text" name="color" value="" placeholder="Color name" required />
+        <input id="save_button" type="submit" value="Save color">
+      </form>
+    </div>
+  
   </div>
 
 </body>

@@ -7,7 +7,7 @@ function show_webcam_stream() {
     navigator.getUserMedia({video: true}, on_success, on_error);
   }
   else {
-    console.log('Not supported!');
+    console.log('getUserMedia not supported!');
   }    
 }
 
