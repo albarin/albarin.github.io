@@ -11,7 +11,7 @@ function show_webcam_stream() {
   }    
 }
 
-function on_success(stream) {  
+function on_success(stream) {
   var video = $('#webcam-stream')[0];
   try {
     // video.src = stream;
@@ -36,7 +36,7 @@ function webcam_stream_to_canvas() {
   canvas.height = canvas.clientHeight;
  
   video.addEventListener('play', function(){
-    draw_to_canvas(this, context, canvas.width, canvas.height);    
+    draw_to_canvas(this, context, canvas.width, canvas.height);
   });
 }
 
@@ -63,12 +63,27 @@ function get_pixel_rgb_color(pixel) {
   return Chromath.rgb2hex(pixel[0], pixel[1], pixel[2]);
 }
 
+function set_selected_color(rgb) {
+  $('#like-button').removeClass('ui-disabled');
+  $('.content').css('background-color', rgb);
+  $('#color-rgb').css('color', 'white');
+  $('#color-rgb').html(rgb);
+
+  $('#info').html('The current color is ');
+}
+
 function rgb_to_hex(red, green, blue) {
   var r = ('0' + red.toString(16)).slice(-2);
   var g = ('0' + green.toString(16)).slice(-2);
-  var b = ('0' + blue.toString(16)).slice(-2);      
+  var b = ('0' + blue.toString(16)).slice(-2);
 
   return '#' + r + g + b;
+}
+
+function clear_current_color() {
+  $('.content').css('background-color', 'white');
+  $('#color-rgb').html('');
+  $('#info').html('Tap to capture a color');
 }
 
 function draw_to_canvas(v, c, w, h) {

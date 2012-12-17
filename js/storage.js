@@ -1,8 +1,9 @@
 function set_local_storage() {
   if(typeof(Storage) !== 'undefined') {
-    var color = $('#color').val();
-    if(color == '') {
-      $('#save_button').button('disable');
+    var color = $('#color-rgb').val();
+
+    if(color == '') {      
+      $('#like-button').addClass('ui-disabled');
     }
   }
   else {
@@ -16,7 +17,11 @@ function print_saved_colors() {
     for (var i=0; i<localStorage.length; i++){
       var key = localStorage.key(i);
       var value = localStorage.getItem(key);
-      $('#saved_colors').append('<li class="' + key + '">' + key + "-->" + value + ' <span class="remove_color">Delete</span></li>');
+      $('#saved-colors').append('<li class="' + key + '">' + key + "-->" + value + ' <span class="remove_color">Delete</span></li>');
     } 
   }
+}
+
+function save_color(color_key, color_rgb) {    
+  localStorage.setItem(color_key, color_rgb);
 }

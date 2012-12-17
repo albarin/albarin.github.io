@@ -1,15 +1,42 @@
 body {
-  text-align: center;
+  margin: 0px auto;
+  text-align: center;  
+}
+
+canvas {
+  border-radius: 15px;
+  width: 100%;
+  max-width: 600px;
+}
+
+#cam-container {
+  max-width: 600px;
 }
 
 #webcam-stream {
   display: none;
 }
 
-canvas {
-  border-radius: 15px;
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  border: 2px solid black;
+#current-color {
+  margin-top: 0px;
+  margin-bottom: 15px;
+  font-size: 30px;
+}
+
+.content div {
+  display: inline-block;
+}
+
+#save-page .ui-dialog-contain {
+  max-width: 210px;
+}
+
+#color-rgb {
+  font-size: 30px;
+}
+
+@media screen and (max-width: 360px) {
+  #current-color {
+    font-size: 20px;
+  }
 }

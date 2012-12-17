@@ -19,28 +19,47 @@
 </head>
 <body>
 
-  <div id="page" data-role="page">
+  <div id="main-page" data-role="page">
 
     <div data-role="header">
-      <h1>Tap to capture a color</h1>
+      <h1>Camera Color</h1>
     </div>
 
-    <div id="content" data-role="content"> 
-      <ul id="saved_colors">
+    <div class="content" data-role="content">      
+      <div id="cam-container">
+        <p id="current-color">
+          <span id="info">Tap to capture a color</span>
+          <span id="color-rgb"></span>
+        </p>
+
+        <video id="webcam-stream" autoplay></video>
+        <canvas width="600" height="450" id="canvas-stream"></canvas>        
         
-      </ul>
-
-      <h1 id="color"></h1>
-
-      <video id="webcam-stream" autoplay></video>
-      <canvas width="600" height="450" id="canvas-stream"></canvas>      
-
-      <form class="storage" data-ajax="false">
-        <input id="color_input" type="text" name="color" value="" placeholder="Color name" required />
-        <input id="save_button" type="submit" value="Save color">        
-      </form>
+        <a id="like-button" href="#save-page" data-role="button" data-rel="dialog" data-transition="pop">I like it!</a> 
+      </div>
     </div>
-  
+
+  </div>
+
+
+  <div id="save-page" data-role="page">
+
+    <div data-role="header" data-theme="e">
+      <h1>Save Color</h1>
+    </div>
+
+    <div class="content" data-role="content" data-theme="d">
+
+      <form id="store-form" data-ajax="false">
+        <input id="color-input" type="text" name="color" value="" placeholder="Color name" required />
+        
+        <div data-role="controlgroup" data-type="horizontal">
+          <input id="save-button" type="submit" value="Save" />
+        </div>
+      </form>
+
+    </div>
+
   </div>
 
 </body>

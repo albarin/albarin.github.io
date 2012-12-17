@@ -1,21 +1,10 @@
 $(document).ready(function() {
-  $('form').submit(function(event) {
-    event.preventDefault();
-    
-    var color_key = $('#color_input').val();
-    var color_rgb = $('#color').html();
-    
-    localStorage.setItem(color_key, color_rgb);
-    $('#saved_colors').append('<li class="' + color_key + '">' + color_key + "-->" + color_rgb + ' <span class="remove_color">Delete</span></li>');
-  });
 
-  $('.remove_color').live('click', function() {
+  /*$('.remove_color').live('click', function() {
     var color_key = $(this).parent().attr('class');    
     localStorage.removeItem(color_key);
     $(this).parent().remove();
-  });
-
-  print_saved_colors();
+  });*/
 
   show_webcam_stream();
 
@@ -26,11 +15,18 @@ $(document).ready(function() {
   $('#canvas-stream').click(function(event) {
     var position = get_click_position(this, event);
     var pixel = get_pixel(this, position);
-    var rgb = get_pixel_rgb_color(pixel);
-
-    $('#save_button').button('enable');
-    $('#content').css('background-color', rgb);
-    $('#color').css('color', 'white');    
-    $('#color').html(rgb);
+    var rgb = get_pixel_rgb_color(pixel);    
+    set_selected_color(rgb);    
   });
+
+  $('#store-form').submit(function(event) {
+    event.preventDefault();
+
+    var color_key = $('#color-input').val();
+    var color_rgb = $('#color-rgb').html();
+
+    save_color(color_key, color_rgb);
+    clear_current_color();
+    $('.ui-dialog').dialog('close');
+  });  
 });
