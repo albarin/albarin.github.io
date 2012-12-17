@@ -27,6 +27,9 @@ $(document).ready(function() {
 
     save_color(color_key, color_rgb);
     clear_current_color();
+
     $('.ui-dialog').dialog('close');
-  });  
+
+    show_message(color_key + ' is saved!');
+  });
 });

@@ -17,12 +17,6 @@ canvas {
   display: none;
 }
 
-#current-color {
-  margin-top: 0px;
-  margin-bottom: 15px;
-  font-size: 30px;
-}
-
 .content div {
   display: inline-block;
 }
@@ -31,12 +25,30 @@ canvas {
   max-width: 210px;
 }
 
+#messages-area {
+  margin-top: 0px;
+  margin-bottom: 15px;
+  font-size: 30px;  
+}
+
+#messages-area #notification {
+  padding: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
 #color-rgb {
   font-size: 30px;
 }
 
+.success {
+  color: #4F8A10;
+  background-color: #DFF2BF;  
+  border: 1px solid #4F8A10;
+}
+
 @media screen and (max-width: 360px) {
-  #current-color {
+  #messages-area {
     font-size: 20px;
   }
 }

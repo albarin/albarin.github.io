@@ -86,6 +86,19 @@ function clear_current_color() {
   $('#info').html('Tap to capture a color');
 }
 
+function show_message(message) {
+  var prev_message = $('#info').html();
+  
+  $('#info').hide();
+  $('#color-rgb').hide();
+
+  $('#notification').html(message);
+  $('#notification').addClass('success').delay(1500).fadeOut('slow', function() {
+    $('#info').show('slow');
+    $('#color-rgb').show('slow');
+  });
+}
+
 function draw_to_canvas(v, c, w, h) {
   if(v.paused || v.ended) {
     return false;
