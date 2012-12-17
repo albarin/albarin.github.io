@@ -5,6 +5,10 @@ function set_local_storage() {
     if(color == '') {      
       $('#like-button').addClass('ui-disabled');
     }
+
+    if(localStorage.length <= 0) {
+      $('#list-colors').hide();
+    }
   }
   else {
     $('.storage').hide();
@@ -22,6 +26,18 @@ function print_saved_colors() {
   }
 }
 
+function load_saved_colors() {
+  for (var i=0; i<localStorage.length; i++){
+    var color_key = localStorage.key(i);
+    var color_rgb = localStorage.getItem(color_key);
+    var li = $('<li data-color="' + color_key + '"><a href="#">' + color_key + '</a><a class="remove-color" href="#"></a></li>');    
+    $(li).css('background-color', color_rgb);
+    $('#list-page ul').append(li);
+    $('#list-page ul').listview('refresh');
+  }
+}
+
 function save_color(color_key, color_rgb) {    
   localStorage.setItem(color_key, color_rgb);
+  $('#list-colors').show();
 }

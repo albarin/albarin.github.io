@@ -1,11 +1,4 @@
 $(document).ready(function() {
-
-  /*$('.remove_color').live('click', function() {
-    var color_key = $(this).parent().attr('class');    
-    localStorage.removeItem(color_key);
-    $(this).parent().remove();
-  });*/
-
   show_webcam_stream();
 
   webcam_stream_to_canvas();
@@ -31,5 +24,19 @@ $(document).ready(function() {
     $('.ui-dialog').dialog('close');
 
     show_message(color_key + ' is saved!');
+  });
+});
+
+$('div').live('pageshow',function(event, ui) {
+  if($(this).attr('id') == 'list-page') {
+    $('#list-page ul').html('');
+    load_saved_colors();
+  }
+
+  $('.remove-color').live('click', function() {
+    var color_key = $(this).parent().attr('data-color');
+    localStorage.removeItem(color_key);
+    $(this).parent().remove();
+    $('#list-page ul').listview('refresh');
   });
 });

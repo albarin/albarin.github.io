@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1"> 
   
-  <title>CamColors</title>
+  <title>Camera Colors</title>
 
   <script src="js/jquery-1.8.3.min.js"></script>  
   <script src="js/jquery.mobile-1.2.0.min.js"></script>
@@ -22,10 +22,11 @@
   <div id="main-page" data-role="page">
 
     <div data-role="header">
-      <h1>Camera Color</h1>
+      <h1>Camera Colors</h1>
+      <a id="list-colors" class="ui-btn-right" href="#list-page" data-role="button" data-mini="true">My colors</a>
     </div>
 
-    <div class="content" data-role="content">      
+    <div class="content" data-role="content">
       <div id="cam-container">
         <p id="messages-area">
           <span id="notification"></span>
@@ -34,7 +35,7 @@
         </p>
 
         <video id="webcam-stream" autoplay></video>
-        <canvas width="600" height="450" id="canvas-stream"></canvas>        
+        <canvas width="600" height="450" id="canvas-stream"></canvas>
         
         <a id="like-button" href="#save-page" data-role="button" data-rel="dialog" data-transition="pop">I like it!</a> 
       </div>
@@ -46,7 +47,7 @@
   <div id="save-page" data-role="page">
 
     <div data-role="header" data-theme="e">
-      <h1>Save Color</h1>
+      <h1>Save Color</h1>      
     </div>
 
     <div class="content" data-role="content" data-theme="d">
@@ -62,6 +63,24 @@
     </div>
 
   </div>
+
+
+  <div id="list-page" data-role="page">
+
+    <div data-role="header" data-theme="">
+      <h1>My colors</h1>
+      <a class="ui-btn-right" data-rel="back" data-role="button" data-mini="true">Back</a>
+    </div>
+
+    <div class="content" data-role="content" data-theme="d">
+
+      <ul data-role="listview" data-inset="true" data-split-theme="d" data-split-icon="delete"> 
+      </ul>
+
+    </div>
+
+  </div>
+
 
 </body>
 </html>
