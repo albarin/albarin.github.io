@@ -7,16 +7,9 @@ body {
 }
 
 canvas {
+  border-radius: 15px;
   width: auto;
   height: auto;
   max-width: 100%;
   border: 2px solid black;
-}
-
-#color {
-  width: 400px;
-  height: 100px;
-  max-width: 100%;
-  border: 2px solid black;
-  margin: 0px auto;
 }

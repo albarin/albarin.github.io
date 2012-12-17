@@ -6,9 +6,10 @@
   
   <title>CamColors</title>
 
-  <script src="js/jquery-1.8.3.min.js"></script>
-  
+  <script src="js/jquery-1.8.3.min.js"></script>  
   <script src="js/jquery.mobile-1.2.0.min.js"></script>
+  <script src="js/chromath.min.js"></script>
+
   <script src="js/functions.js"></script>
   <script src="js/storage.js"></script>
   <script src="js/main.js"></script>
@@ -18,20 +19,21 @@
 </head>
 <body>
 
-  <div data-role="page">
+  <div id="page" data-role="page">
 
     <div data-role="header">
-      <h1>CameraColors</h1>
+      <h1>Tap to capture a color</h1>
     </div>
 
-    <div data-role="content"> 
+    <div id="content" data-role="content"> 
       <ul id="saved_colors">
         
       </ul>
 
+      <h1 id="color"></h1>
+
       <video id="webcam-stream" autoplay></video>
-      <canvas width="600" height="450" id="canvas-stream"></canvas>
-      <div id="color"></div>
+      <canvas width="600" height="450" id="canvas-stream"></canvas>      
 
       <form class="storage" data-ajax="false">
         <input id="color_input" type="text" name="color" value="" placeholder="Color name" required />

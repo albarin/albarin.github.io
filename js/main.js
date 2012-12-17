@@ -29,9 +29,8 @@ $(document).ready(function() {
     var rgb = get_pixel_rgb_color(pixel);
 
     $('#save_button').button('enable');
-    $('#color').css('background-color', rgb);
-    $('#color').css('color', 'white');
-    $('#color').css('font-size', '20px');
+    $('#content').css('background-color', rgb);
+    $('#color').css('color', 'white');    
     $('#color').html(rgb);
   });
 });

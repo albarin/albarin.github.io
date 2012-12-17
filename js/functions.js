@@ -60,7 +60,7 @@ function get_pixel(canvas, position) {
 }
 
 function get_pixel_rgb_color(pixel) {
-  return rgb_to_hex(pixel[0], pixel[1], pixel[2]);
+  return Chromath.rgb2hex(pixel[0], pixel[1], pixel[2]);
 }
 
 function rgb_to_hex(red, green, blue) {
