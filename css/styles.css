@@ -47,8 +47,24 @@ canvas {
   border: 1px solid #4F8A10;
 }
 
-#list-colors {
-  
+#list-colors li {
+  font-size: 20px;
+  font-weight: normal;  
+}
+
+.color-name {
+  position: relative;
+  top: -2px;
+}
+
+.remove-color {
+  position: relative;
+  top: 3px;
+  height: 22px;
+  width: 22px;
+  display: inline-block;
+  margin-right: 20px;
+  background: url('../images/delete.png') no-repeat!important;
 }
 
 @media screen and (max-width: 360px) {

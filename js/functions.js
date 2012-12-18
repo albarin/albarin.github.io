@@ -14,7 +14,7 @@ function show_webcam_stream() {
 function on_success(stream) {
   var video = $('#webcam-stream')[0];
   try {
-    // video.src = stream;
+    //video.src = stream;
     video.src = window.URL.createObjectURL(stream);
   }
   catch(e) {
@@ -61,6 +61,10 @@ function get_pixel(canvas, position) {
 
 function get_pixel_rgb_color(pixel) {
   return Chromath.rgb2hex(pixel[0], pixel[1], pixel[2]);
+}
+
+function get_complement_color(rgb) {
+  return Chromath.complement(new Chromath('red')).toString();
 }
 
 function set_selected_color(rgb) {

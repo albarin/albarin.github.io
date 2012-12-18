@@ -9,7 +9,7 @@ $(document).ready(function() {
     var position = get_click_position(this, event);
     var pixel = get_pixel(this, position);
     var rgb = get_pixel_rgb_color(pixel);    
-    set_selected_color(rgb);    
+    set_selected_color(rgb);
   });
 
   $('#store-form').submit(function(event) {
