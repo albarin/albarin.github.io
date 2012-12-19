@@ -16,24 +16,13 @@ function set_local_storage() {
   }
 }
 
-function print_saved_colors() {
-  if(typeof(Storage) !== 'undefined') {
-    for (var i=0; i<localStorage.length; i++){
-      var key = localStorage.key(i);
-      var value = localStorage.getItem(key);
-      $('#saved-colors').append('<li class="' + key + '">' + key + "-->" + value + ' <span class="remove_color">Delete</span></li>');
-    } 
-  }
-}
-
 function load_saved_colors() {
-  for (var i=0; i<localStorage.length; i++){
+  for (var i=0; i<localStorage.length; i++) {
     var color_key = localStorage.key(i);
-    var color_rgb = localStorage.getItem(color_key);
-    var complement_rgb = Chromath.tint(color_rgb, 0.85).toRGBString();    
-    var li = $('<li data-color="' + color_key + '"><span class="remove-color"></span><span class="color-name">' + color_key + '</span></span></li>');
+    var color_rgb = localStorage.getItem(color_key);    
+    var li = $('<li data-color="' + color_key + '"><span class="remove-color"></span><span class="color-name">' + color_key + ' - ' + color_rgb + '</span></span></li>');
         
-    $(li).css('background', '-moz-linear-gradient(right, ' + color_rgb + ' 80%, white)');
+    $(li).css('background', '-moz-linear-gradient(right, ' + color_rgb + ' 60%, white)');
     
     $('#list-page ul').append(li);
     $('#list-page ul').listview('refresh');

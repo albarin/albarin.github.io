@@ -32,13 +32,21 @@ canvas {
 }
 
 #messages-area #notification {
+  
+}
+
+#messages-area #info-color {
   padding: 5px;
   padding-left: 20px;
   padding-right: 20px;
+  background-color: white;
+  color: #5E87B0;
+  border: 1px solid #5E87B0;
 }
 
 #color-rgb {
   font-size: 30px;
+  color: #5E87B0;
 }
 
 .success {

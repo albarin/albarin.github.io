@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1"> 
   
-  <title>Camera Colors</title>
+  <title>Color Picker</title>
 
   <script src="js/jquery-1.8.3.min.js"></script>  
   <script src="js/jquery.mobile-1.2.0.min.js"></script>
@@ -21,8 +21,8 @@
 
   <div id="main-page" data-role="page">
 
-    <div data-role="header">
-      <h1>Camera Colors</h1>
+    <div data-role="header" data-theme="b">
+      <h1>Color Picker</h1>
       <a id="list-colors" class="ui-btn-right" href="#list-page" data-role="button" data-mini="true">My colors</a>
     </div>
 
@@ -30,8 +30,10 @@
       <div id="cam-container">
         <p id="messages-area">
           <span id="notification"></span>
-          <span id="info">Tap to capture a color</span>
-          <span id="color-rgb"></span>
+          <span id="info-color">
+            <span id="info">Tap to capture a color</span>
+            <span id="color-rgb"></span>
+          </span>
         </p>
 
         <video id="webcam-stream" autoplay></video>
@@ -46,11 +48,11 @@
 
   <div id="save-page" data-role="page">
 
-    <div data-role="header" data-theme="e">
+    <div data-role="header" data-theme="b">
       <h1>Save Color</h1>      
     </div>
 
-    <div class="content" data-role="content" data-theme="d">
+    <div class="content" data-role="content" data-theme="b">
 
       <form id="store-form" data-ajax="false">
         <input id="color-input" type="text" name="color" value="" placeholder="Color name" required />
@@ -67,7 +69,7 @@
 
   <div id="list-page" data-role="page">
 
-    <div data-role="header" data-theme="">
+    <div data-role="header" data-theme="b">
       <h1>My colors</h1>
       <a class="ui-btn-right" data-rel="back" data-role="button" data-mini="true">Back</a>
     </div>

@@ -63,14 +63,9 @@ function get_pixel_rgb_color(pixel) {
   return Chromath.rgb2hex(pixel[0], pixel[1], pixel[2]);
 }
 
-function get_complement_color(rgb) {
-  return Chromath.complement(new Chromath('red')).toString();
-}
-
 function set_selected_color(rgb) {
   $('#like-button').removeClass('ui-disabled');
-  $('.content').css('background-color', rgb);
-  $('#color-rgb').css('color', 'white');
+  $('.content').css('background-color', rgb);  
   $('#color-rgb').html(rgb);
 
   $('#info').html('The current color is ');
@@ -86,19 +81,19 @@ function rgb_to_hex(red, green, blue) {
 
 function clear_current_color() {
   $('.content').css('background-color', 'white');
-  $('#color-rgb').html('');
+  $('#info #color-rgb').html('');
   $('#info').html('Tap to capture a color');
 }
 
 function show_message(message) {
   var prev_message = $('#info').html();
   
-  $('#info').hide();
-  $('#color-rgb').hide();
+  $('#info-color').hide();
+  //$('#color-rgb').hide();
 
   $('#notification').html(message);
   $('#notification').addClass('success').delay(1500).fadeOut('slow', function() {
-    $('#info').show('slow');
+    $('#info-color').show('slow');
     $('#color-rgb').show('slow');
   });
 }
