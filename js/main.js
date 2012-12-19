@@ -1,4 +1,11 @@
 $(document).ready(function() {
+  if(jQuery.support.touch) {
+    $('#info').html('Tap to capture a color');
+  }
+  else {
+    $('#info').html('Click to capture a color');
+  }
+    
   show_webcam_stream();
 
   webcam_stream_to_canvas();

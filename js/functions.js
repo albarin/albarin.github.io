@@ -82,7 +82,13 @@ function rgb_to_hex(red, green, blue) {
 function clear_current_color() {
   $('.content').css('background-color', 'white');
   $('#info #color-rgb').html('');
-  $('#info').html('Tap to capture a color');
+
+  if(jQuery.support.touch) {
+    $('#info').html('Tap to capture a color');
+  }
+  else {
+    $('#info').html('Click to capture a color');
+  }
 }
 
 function show_message(message) {
